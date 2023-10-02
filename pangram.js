@@ -1,5 +1,4 @@
-const string =
-  "rebase is a school of performance whose goal is to have more students next year";
+const string = "The quick brown fox jumps over the lazy dog";
 
 function pangramPrint(string) {
   let letters = [
@@ -30,7 +29,14 @@ function pangramPrint(string) {
     "y",
     "z",
   ];
-  let newString = string.split().filter((i) => i !== 1);
+  let newString = string.split("").filter((a) => a !== "");
   console.log(newString);
+  for (let i = 0; i < letters.length; i++) {
+    if (newString.indexOf(letters[i]) === -1) {
+      console.log("not pangram");
+    } else if (newString.indexOf(letters[i]) === 1) {
+      console.log("pangram");
+    }
+  }
 }
 pangramPrint(string);
